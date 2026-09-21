@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Promise</title>
+</head>
+<body>
+    <script>
+        //backend
+        const receptekLekerdez = new Promise((resolve,reject) =>{
+            setTimeout(() => {
+                if(Math.random() < 0.9)
+                    resolve([122,673,89,24,745])
+                reject("Az azonosítok lekérdezése nem sikerült")
+            },2000)
+        })
+
+        const recept = (id) => new Promise((resolve,reject) => {
+            const recept = {
+                    id: 89,
+                    cim: "gulyas",
+                    kategoria: "leves",
+                    ido: '180',
+                    nehezseg: 3
+            }
+            setTimeout((id) => {
+                if(Math.random() < 0.9)
+                    resolve(recept)
+                reject("A recept lekérdezése sikertelen")
+            }, 2500);
+
+            
+        })
+
+        const receptKategoriaAlapjan = (kategoria) => new Promise((resolve,reject) => {
+            const levesek = [
+                {id:89,cim:"gulyas",kategoria:"leves"},
+                {id:148,cim:"karalabeleves",kategoria:"leves"},
+                {id:397,cim:"gyumolcsleves",kategoria:"leves"}
+            ]
+
+            setTimeout((kategoria) => {
+                if(Math.random() < 0.9)
+                    resolve(levesek)
+                reject(`nem sikerult lekérdezni a ${kategoria} kategórát`)
+            }, 2000);
+        },1500)
+
+
+        //frontend
+        receptekLekerdez
+        .then(azonositok => {
+            console.log(azonositok)
+            return recept(azonositok[2]) // továbbadja a kovetkezo then ágnak
+        })
+        .then(recept => {
+            console.log(recept)
+            return receptKategoriaAlapjan(recept.kategoria)
+        })
+        .then(receptek => {
+            console.log(receptek)
+            return recept(receptek[0])
+        })
+        .then(recept => {
+            console.log(recept)
+        })
+        .catch( error => {
+            console.log(error)
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

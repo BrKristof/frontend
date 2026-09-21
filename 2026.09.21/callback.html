@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        //callback hell
+        function receptekLekerdez(){
+            setTimeout(() => {
+                const recepIDK = [122,673,89,24,745]
+                console.log(recepIDK)
+
+                setTimeout((id) => {
+                    const recept = {
+                        id: 89,
+                        cim: "gulyas",
+                        kategoria: "leves",
+                        ido: '180',
+                        nehezseg: 3
+                    }
+
+                    console.log(recept)
+
+                    setTimeout(kategoria => {
+                        const levesek = [
+                            {id:89,cim:"gulyas",kategoria:"leves"},
+                            {id:148,cim:"karalabeleves",kategoria:"leves"},
+                            {id:397,cim:"gyumolcsleves",kategoria:"leves"}
+                        ]
+
+                        console.log(levesek)
+
+                        setTimeout(id => {
+                            const recept = {
+                                id: 397,
+                                cim: "gyumolcsleves",
+                                kategoria: "leves",
+                                ido: '40',
+                                nehezseg: 1
+                            }
+                            console.log(recept)
+                        }, 1500, levesek[2]);
+
+                    },2000, recept.kategoria);
+
+                }, 2000, recepIDK[2]);
+
+            }, 1500);
+        }
+
+        receptekLekerdez()
+    </script>
+</body>
+</html>
