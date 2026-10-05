@@ -28,21 +28,19 @@ const url = "https://pokeapi.co/api/v2/pokemon/"
 
 let getPokeData = async(name=undefined) => {
     let finalUrl
-    console.log(name.value)
+    //console.log(name.value)
 
     if(name.value != undefined){
         
         finalUrl = url + name.value
-        console.log(finalUrl)
         
     }
     else{
         
         let id = Math.floor(Math.random()*1025+1)
         finalUrl= url + id
-        console.log(finalUrl)
     }
-    console.log(finalUrl)
+    //console.log(finalUrl)
     
 
     try{
@@ -53,7 +51,7 @@ let getPokeData = async(name=undefined) => {
         const data = await response.json()
         $("error").style.display = "none"
 
-        console.log(data)
+        //console.log(data)
         fillCard(data)
     }
     catch(err){
@@ -109,6 +107,6 @@ let styleCard = type => {
 $('btn').addEventListener('click',getPokeData)
 $('btn2').addEventListener('click', () => {
     const pokename = $('poke-name')
-    console.log(pokename)
+    //console.log(pokename)
     getPokeData(pokename)
 })
