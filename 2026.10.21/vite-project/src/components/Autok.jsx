@@ -1,7 +1,7 @@
 import Auto from "./Auto.jsx"
 import { listaz, torol } from "../data.jsx"
 
-export default function Autok(autok,setAutok){
+export default function Autok({autok,setAutok}){
     function handeTorles(rendszam){
         //1. az eredeti tömbből törlök
         torol(rendszam)

@@ -4,8 +4,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 
-import Autok from './components/Autok.jsx'
+import Autok from './components/autok.jsx'
 import { listaz } from './data.jsx'
+import UjAuto from './components/Ujauto.jsx'
 
 function App() {
   const [autok,setAutok] = useState(listaz())
@@ -17,7 +18,21 @@ function App() {
       </header>
 
       <main>
-        <Autok autok={autok} setAutok={setAutok}/>
+        <section style={{width:"60%"}}>
+          <h2>Autók listája</h2>
+          <div  id="autok" >
+            <Autok autok={autok} setAutok={setAutok}/>
+          </div>
+          
+        </section>
+        <section >
+          <h2>Új autó felvétele</h2>
+          <div id="uj-autok">
+            <UjAuto  autok={autok} setAutok={setAutok}/>
+          </div>
+          
+        </section>
+        
       </main>
     </>
   )

@@ -22,7 +22,12 @@ export function listaz() {
 }
 
 export function felvesz(ujauto){
-    AUTOK.push(ujauto)
+    //AUTOK.push(ujauto) -> nem lesz jó
+    if(AUTOK.find(a => a.rendszam == ujauto.rendszam)){
+        return
+    }
+
+    AUTOK = [...AUTOK, ujauto]
 }
 
 export function torol(rendszam){

@@ -3,7 +3,7 @@ export default function Auto({rendszam,evjarat,fogyasztas,onTorles}){
 
 
     return (
-        <div>
+        <div className="auto">
             <p>Rendszám: {rendszam}</p>
             <p>Évjárat: {evjarat}</p>
             <p>Fogyasztás: {fogyasztas}l</p>
