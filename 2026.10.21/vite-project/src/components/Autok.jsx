@@ -11,4 +11,4 @@ export default function Autok({autok,setAutok}){
     return (
         autok.map(x => <Auto key={x.rendszam} {...x} onTorles={() => handeTorles(x.rendszam)} />)
     )
-}
+}                       
