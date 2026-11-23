@@ -1,0 +1,46 @@
+.card {
+    position: relative;
+    border: 2px rgb(66, 0, 128) solid ;
+    border-radius: 20px;
+    background-color: rgb(251, 242, 255);
+    padding-top: 30px;
+    padding-left: 10px;
+    
+    
+}
+
+.container {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    height: 400px;
+    width: 300px;
+}
+
+#img {
+    border-radius: 20px;
+    position: relative;
+    height: 200px;
+    margin-left: 40px;
+    align-content: center;
+}
+
+#btn {
+    border-radius: 5px;
+    border: black 2px solid;
+    width: 300px;
+    margin-top: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: blueviolet;
+    font-size: large;
+    color: white;
+
+}
+
+#name {
+    text-align: center;
+}
+
+
+

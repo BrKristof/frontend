@@ -1,0 +1,37 @@
+main{
+  display: flex;
+}
+
+#ujpekaru{
+  width: 30%;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+#pekaruk{
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+}
+
+#pekaru {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  border-radius: 18px;
+  margin-left: 10px;
+  margin-top: 15px; 
+  text-align: center;
+}
+button{
+  border-radius: 10px;
+  border: 2px olivedrab solid;
+  background-color: rgb(34, 212, 34);
+  padding: 10px 10px;
+  margin-top: 10px;
+}
+
+button:hover {
+  border-color: rgb(34, 212, 34);
+  background-color: olivedrab;
+}
